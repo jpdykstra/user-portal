@@ -1,7 +1,7 @@
 ﻿using JPD.Demo.Service.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace JPD.Demo.Service
+namespace JPD.Demo.Service.Entities
 {
     public class UserContext : DbContext
     {
