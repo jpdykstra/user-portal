@@ -13,7 +13,14 @@ namespace JPD.Demo.Service.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Interest>().HasData(new Interest
+            modelBuilder.Entity<Address>()
+                .Property(a => a.AddressType)
+                .HasConversion<int>();
+
+
+
+            modelBuilder.Entity<Interest>().HasData(
+               new Interest
             {
                 InterestId = Guid.NewGuid(),
                 Name = "Hiking",

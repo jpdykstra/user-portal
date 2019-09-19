@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JPD.Demo.Service.Entities
 {
@@ -25,6 +23,10 @@ namespace JPD.Demo.Service.Entities
 
         [ForeignKey("AddressId")]
         public Address MailingAddress { get; set; }
+
+
+        [ForeignKey("AddressId")]
+        public Address BillingAddress { get; set; }
 
         public ICollection<Interest> Interests { get; set; } = new List<Interest>();
     }

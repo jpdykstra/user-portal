@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using JPD.Demo.Service.Common.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JPD.Demo.Service.Entities
 {
@@ -31,5 +29,8 @@ namespace JPD.Demo.Service.Entities
         [Required]
         [MaxLength(10)]
         public string ZipCode { get; set; }
+
+        public AddressType AddressType { get; set; }
+
     }
 }
