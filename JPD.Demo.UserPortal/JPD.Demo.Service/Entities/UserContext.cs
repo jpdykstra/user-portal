@@ -1,4 +1,5 @@
-﻿using JPD.Demo.Service.Entities;
+﻿using JPD.Demo.Service.Business;
+using JPD.Demo.Service.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -17,21 +18,7 @@ namespace JPD.Demo.Service.Entities
                 .Property(a => a.AddressType)
                 .HasConversion<int>();
 
-
-
-            modelBuilder.Entity<Interest>().HasData(
-               new Interest
-            {
-                InterestId = Guid.NewGuid(),
-                Name = "Hiking",
-                Description = "Going for long walks in the country or woods."
-
-            }, new Interest
-            {
-                InterestId = Guid.NewGuid(),
-                Name = "Skiing",
-                Description = "Traveling over the snow on skis."
-            }); 
+            modelBuilder.Entity<User>().HasData(UserSeedLogic.Instance.PopulateUserList(20));
         }
 
         public DbSet<User> Users { get; set; }
