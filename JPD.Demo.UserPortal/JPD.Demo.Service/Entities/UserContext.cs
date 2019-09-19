@@ -1,7 +1,5 @@
 ﻿using JPD.Demo.Service.Business;
-using JPD.Demo.Service.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace JPD.Demo.Service.Entities
 {
