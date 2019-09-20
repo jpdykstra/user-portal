@@ -1,5 +1,5 @@
 ﻿using JPD.Demo.Service.Common.Helpers;
-using JPD.Demo.Service.Common.Interfaces;
+using JPD.Demo.Service.Interfaces;
 using JPD.Demo.Service.Entities;
 using System;
 using System.Collections.Generic;

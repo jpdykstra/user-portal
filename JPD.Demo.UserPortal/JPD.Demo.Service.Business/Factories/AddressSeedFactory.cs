@@ -1,12 +1,9 @@
 ﻿using JPD.Demo.Service.Business;
 using JPD.Demo.Service.Common.Enums;
-using JPD.Demo.Service.Common.Interfaces;
+using JPD.Demo.Service.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace JPD.Demo.Service.Common
+namespace JPD.Demo.Service.Business.Factories
 {
     public static class AddressSeedFactory
     {

@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JPD.Demo.Service.Common\JPD.Demo.Service.Common.csproj" />
+    <ProjectReference Include="..\JPD.Demo.Service.Interfaces\JPD.Demo.Service.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

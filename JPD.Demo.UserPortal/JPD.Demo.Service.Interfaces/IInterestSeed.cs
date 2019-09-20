@@ -1,7 +1,7 @@
 ﻿using JPD.Demo.Service.Entities;
 using System.Collections.Generic;
 
-namespace JPD.Demo.Service.Common.Interfaces
+namespace JPD.Demo.Service.Interfaces
 {
     public interface IInterestSeed
     {

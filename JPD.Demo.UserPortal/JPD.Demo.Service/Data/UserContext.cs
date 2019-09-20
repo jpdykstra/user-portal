@@ -16,7 +16,7 @@ namespace JPD.Demo.Service.Entities
                 .Property(a => a.AddressType)
                 .HasConversion<int>();
 
-            modelBuilder.Entity<User>().HasData(UserSeedLogic.Instance.PopulateUserList(20));
+            //modelBuilder.Entity<User>().HasData(UserSeedLogic.Instance.PopulateUserList(20));
         }
 
         public DbSet<User> Users { get; set; }
