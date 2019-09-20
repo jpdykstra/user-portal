@@ -5,8 +5,6 @@ using JPD.Demo.Service.Entities;
 using JPD.Demo.Service.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace JPD.Demo.Tests
 {
@@ -21,6 +19,7 @@ namespace JPD.Demo.Tests
             Assert.IsTrue(addressLogic.GetType().Equals(typeof(MailingAddressSeedLogic)));
         }
 
+        [TestMethod]
         public void ShouldCreateBillingAddressSeedLogic()
         {
             IAddressSeed addressLogic = AddressSeedFactory.Create(AddressType.Billing);
@@ -69,6 +68,5 @@ namespace JPD.Demo.Tests
 
             Assert.IsNotNull(address.ZipCode);
         }
-
     }
 }
