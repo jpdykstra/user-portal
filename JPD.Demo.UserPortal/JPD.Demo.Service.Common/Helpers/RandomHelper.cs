@@ -10,10 +10,16 @@ namespace JPD.Demo.Service.Common.Helpers
 
         public static string GetRandomString(Func<List<string>> func)
         {
+            string returnValue = "";
             var list = func.Invoke();
             int index = random.Next(list.Count());
 
-            return list[index];
+            if (index > 0)
+            {
+                returnValue = list[index];
+            }
+
+            return returnValue;
         }
 
         public static string GetRandomFormattedString(Func<List<string>> func, string arg0)
