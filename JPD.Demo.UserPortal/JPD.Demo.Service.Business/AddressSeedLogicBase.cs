@@ -13,13 +13,15 @@ namespace JPD.Demo.Service.Business
         {
             var address = new Address();
 
+            address.AddressType = AddressType;
+
             address.AddressId = Guid.NewGuid();
             address.AddressLine1 = RandomHelper.GetRandomString(GetAddressLine1);
             address.AddressLine2 = RandomHelper.GetRandomString(GetAddressLine2);
             address.City = RandomHelper.GetRandomString(GetCities);
             address.State = RandomHelper.GetRandomString(GetStates);
             address.ZipCode = RandomHelper.GetRandomString(GetZipCodes);
-
+            
             return address;
         }
 

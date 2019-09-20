@@ -30,9 +30,9 @@ namespace JPD.Demo.Service.Common.Helpers
             return string.Format(list[index], arg0);
         }
 
-        public static short GetRandomShort(short maxValue)
+        public static short GetRandomShort(short minValue, short maxValue)
         {
-            return Convert.ToInt16(random.Next(maxValue));
+            return Convert.ToInt16(random.Next(minValue, maxValue));
         }
     }
 }

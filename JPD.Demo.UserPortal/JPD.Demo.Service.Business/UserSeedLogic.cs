@@ -31,10 +31,10 @@ namespace JPD.Demo.Service.Business
             user.UserId = Guid.NewGuid();
             user.FirstName = RandomHelper.GetRandomString(GetFirstNames);
             user.LastName = RandomHelper.GetRandomString(GetLastNames);
-            user.Age = RandomHelper.GetRandomShort(75);
+            user.Age = RandomHelper.GetRandomShort(18,85);
             user.MailingAddress = AddressSeedFactory.Create(AddressType.Mailing).Populate();
             user.BillingAddress = AddressSeedFactory.Create(AddressType.Billing).Populate();
-            user.Interests = InterestSeedLogic.Instance.PopulateInterestList(RandomHelper.GetRandomShort(5));
+            user.Interests = InterestSeedLogic.Instance.PopulateInterestList(RandomHelper.GetRandomShort(1,6));
             
             return user;
         }
