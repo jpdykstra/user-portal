@@ -1,5 +1,6 @@
 ﻿using JPD.Demo.Service.Entities;
 using JPD.Demo.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,6 +29,11 @@ namespace JPD.Demo.Service.Data
                 .Where(u => u.LastName.ToLowerInvariant().Equals(lastName.ToLowerInvariant()));
 
             return users.ToList();
+        }
+
+        public Guid AddUser(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

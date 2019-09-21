@@ -1,4 +1,5 @@
 ﻿using JPD.Demo.Service.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace JPD.Demo.Service.Interfaces
@@ -8,5 +9,7 @@ namespace JPD.Demo.Service.Interfaces
         List<User> GetByFirstName(string firstName);
 
         List<User> GetByLastName(string LastName);
+
+        Guid AddUser(User user);
     }
 }
