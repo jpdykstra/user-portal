@@ -10,11 +10,11 @@ namespace JPD.Demo.Service.Data
         {
             using (var scope = webHost.Services.CreateScope())
             {
-                using (var appContext = scope.ServiceProvider.GetRequiredService<UserContext>())
+                using (var userContext = scope.ServiceProvider.GetRequiredService<UserContext>())
                 {
                     try
                     {
-                        appContext.Database.EnsureCreated();
+                        userContext.Database.EnsureCreated();
                     }
                     catch (Exception)
                     {
