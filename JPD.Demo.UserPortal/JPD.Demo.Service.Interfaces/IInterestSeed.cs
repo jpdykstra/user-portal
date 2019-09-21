@@ -5,8 +5,8 @@ namespace JPD.Demo.Service.Interfaces
 {
     public interface IInterestSeed
     {
-        Interest Populate();
+        Interest Populate(User user);
 
-        ICollection<Interest> PopulateInterestList(int count);
+        ICollection<Interest> PopulateInterestList(User user, int count);
     }
 }

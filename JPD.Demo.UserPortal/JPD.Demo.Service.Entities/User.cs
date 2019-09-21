@@ -21,13 +21,8 @@ namespace JPD.Demo.Service.Entities
 
         public short Age { get; set; }
 
-        [ForeignKey("MailingAddressId")]
-        public Address MailingAddress { get; set; }
+        public ICollection<Address> Addresses { get; set; }
 
-
-        [ForeignKey("BillingAddressId")]
-        public Address BillingAddress { get; set; }
-
-        public ICollection<Interest> Interests { get; set; } = new List<Interest>();
+        public ICollection<Interest> Interests { get; set; }
     }
 }

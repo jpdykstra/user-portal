@@ -4,6 +4,6 @@ namespace JPD.Demo.Service.Interfaces
 {
     public interface IAddressSeed
     {
-        Address Populate();
+        Address Populate(User user);
     }
 }

@@ -22,12 +22,13 @@ namespace JPD.Demo.Service.Business
             }
         }
 
-        public Interest Populate()
+        public Interest Populate(User user)
         {
             var interest = new Interest();
 
             interest.InterestId = Guid.NewGuid();
             interest.Name = RandomHelper.GetRandomString(GetInterestNames);
+            interest.UserId = user.UserId;
 
             if (interest.Name.Trim().ToLower().Equals("sofware engineering"))
             {
@@ -41,14 +42,14 @@ namespace JPD.Demo.Service.Business
             return interest;
         }
 
-        public ICollection<Interest> PopulateInterestList(int count)
+        public ICollection<Interest> PopulateInterestList(User user, int count)
         {
             int i = 0;
             var interests = new List<Interest>();
 
             while (i < count)
             {
-                interests.Add(Populate());
+                interests.Add(Populate(user));
                 i++;
             }
 

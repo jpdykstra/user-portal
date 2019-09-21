@@ -33,7 +33,7 @@ namespace JPD.Demo.Tests
             var address = new Address();
             var addressSeedLogic = new MailingAddressSeedLogic();
 
-            address = addressSeedLogic.Populate();
+            address = addressSeedLogic.Populate(new User());
 
             Assert.IsTrue(address.AddressId != Guid.Empty);
 
@@ -54,7 +54,7 @@ namespace JPD.Demo.Tests
             var address = new Address();
             var addressSeedLogic = new BillingAddressSeedLogic();
 
-            address = addressSeedLogic.Populate();
+            address = addressSeedLogic.Populate(new User());
 
             Assert.IsTrue(address.AddressId != Guid.Empty);
 

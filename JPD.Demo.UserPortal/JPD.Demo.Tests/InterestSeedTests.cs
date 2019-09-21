@@ -16,7 +16,7 @@ namespace JPD.Demo.Tests
         {
             var interest = new Interest();
 
-            interest = InterestSeedLogic.Instance.Populate();
+            interest = InterestSeedLogic.Instance.Populate(new User());
 
             Assert.IsTrue(interest.InterestId != Guid.Empty);
 
@@ -31,7 +31,7 @@ namespace JPD.Demo.Tests
             int count = 3;
             var interests = new List<Interest>();
 
-            interests = InterestSeedLogic.Instance.PopulateInterestList(count).ToList();
+            interests = InterestSeedLogic.Instance.PopulateInterestList(new User(), count).ToList();
 
             Assert.IsTrue(interests.Count.Equals(count));
         }

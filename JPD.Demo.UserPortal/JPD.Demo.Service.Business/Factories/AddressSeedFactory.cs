@@ -1,5 +1,4 @@
-﻿using JPD.Demo.Service.Business;
-using JPD.Demo.Service.Common.Enums;
+﻿using JPD.Demo.Service.Common.Enums;
 using JPD.Demo.Service.Interfaces;
 using System;
 

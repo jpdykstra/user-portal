@@ -9,7 +9,7 @@ namespace JPD.Demo.Service.Business
 {
     public abstract class AddressSeedLogicBase : IAddressSeed
     {
-        public Address Populate()
+        public Address Populate(User user)
         {
             var address = new Address();
 
@@ -21,6 +21,8 @@ namespace JPD.Demo.Service.Business
             address.City = RandomHelper.GetRandomString(GetCities);
             address.State = RandomHelper.GetRandomString(GetStates);
             address.ZipCode = RandomHelper.GetRandomString(GetZipCodes);
+
+            address.UserId = user.UserId;
             
             return address;
         }

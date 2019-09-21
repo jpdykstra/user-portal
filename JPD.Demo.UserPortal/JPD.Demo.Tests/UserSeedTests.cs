@@ -24,12 +24,6 @@ namespace JPD.Demo.Tests
             Assert.IsNotNull(user.LastName);
 
             Assert.IsTrue(user.Age > 0);
-
-            Assert.IsNotNull(user.BillingAddress);
-
-            Assert.IsNotNull(user.MailingAddress);
-
-            Assert.IsNotNull(user.Interests);
         }
 
         [TestMethod]

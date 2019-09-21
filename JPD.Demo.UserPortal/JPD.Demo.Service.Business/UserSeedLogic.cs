@@ -5,6 +5,7 @@ using JPD.Demo.Service.Entities;
 using JPD.Demo.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JPD.Demo.Service.Business
 {
@@ -32,10 +33,22 @@ namespace JPD.Demo.Service.Business
             user.FirstName = RandomHelper.GetRandomString(GetFirstNames);
             user.LastName = RandomHelper.GetRandomString(GetLastNames);
             user.Age = RandomHelper.GetRandomShort(18,85);
-            user.MailingAddress = AddressSeedFactory.Create(AddressType.Mailing).Populate();
-            user.BillingAddress = AddressSeedFactory.Create(AddressType.Billing).Populate();
-            user.Interests = InterestSeedLogic.Instance.PopulateInterestList(RandomHelper.GetRandomShort(1,6));
-            
+
+            //user.Addresses = new List<Address>();
+
+            //user.Addresses.Add(AddressSeedFactory.Create(AddressType.Mailing).Populate());
+
+            //user.Addresses.First().UserId = user.UserId;
+            //user.Addresses.First().User = user;
+
+            //user.Addresses.Add(AddressSeedFactory.Create(AddressType.Billing).Populate());
+
+            //user.Interests = new List<Interest>();
+
+            //user.Interests = InterestSeedLogic.Instance.PopulateInterestList(user, RandomHelper.GetRandomShort(1, 6));
+
+            //user.Addresses.ToList().ForEach(a => a.UserId = user.UserId);
+
             return user;
         }
 

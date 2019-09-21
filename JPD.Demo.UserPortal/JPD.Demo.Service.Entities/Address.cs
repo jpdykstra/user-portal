@@ -32,5 +32,6 @@ namespace JPD.Demo.Service.Entities
 
         public AddressType AddressType { get; set; }
 
+        public Guid UserId { get; set; }
     }
 }

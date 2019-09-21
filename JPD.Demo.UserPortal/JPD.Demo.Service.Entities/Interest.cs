@@ -17,5 +17,8 @@ namespace JPD.Demo.Service.Entities
         [Required]
         [MaxLength(250)]
         public string Description { get; set; }
+
+        [ForeignKey("UserId")]
+        public Guid UserId { get; set; }
     }
 }

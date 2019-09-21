@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\JPD.Demo.Service.Business\JPD.Demo.Service.Business.csproj" />
     <ProjectReference Include="..\JPD.Demo.Service.Common\JPD.Demo.Service.Common.csproj" />
     <ProjectReference Include="..\JPD.Demo.Service.Entities\JPD.Demo.Service.Entities.csproj" />
