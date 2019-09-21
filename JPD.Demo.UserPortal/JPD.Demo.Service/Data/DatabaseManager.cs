@@ -4,7 +4,7 @@ using System;
 
 namespace JPD.Demo.Service.Data
 {
-    public static class MigrationManager
+    public static class DatabaseManager
     {
         public static IWebHost CreateDatabase(this IWebHost webHost)
         {
