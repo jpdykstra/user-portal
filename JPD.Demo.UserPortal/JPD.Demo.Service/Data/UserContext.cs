@@ -25,7 +25,7 @@ namespace JPD.Demo.Service.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            List<User> users = UserSeedLogic.Instance.PopulateUserList(20).ToList();
+            List<User> users = UserSeedLogic.Instance.PopulateUserList(200).ToList();
 
             modelBuilder.Entity<User>().HasData(users);
 
