@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -7,7 +6,7 @@ namespace JPD.Demo.Service.Data
 {
     public static class MigrationManager
     {
-        public static IWebHost MigrateDatabase(this IWebHost webHost)
+        public static IWebHost CreateDatabase(this IWebHost webHost)
         {
             using (var scope = webHost.Services.CreateScope())
             {
@@ -15,7 +14,7 @@ namespace JPD.Demo.Service.Data
                 {
                     try
                     {
-                        appContext.Database.Migrate();
+                        appContext.Database.EnsureCreated();
                     }
                     catch (Exception)
                     {
@@ -24,7 +23,6 @@ namespace JPD.Demo.Service.Data
                     }
                 }
             }
-
             return webHost;
         }
     }
