@@ -2,11 +2,12 @@
 using JPD.Demo.Service.Business.Factories;
 using JPD.Demo.Service.Common.Enums;
 using JPD.Demo.Service.Common.Helpers;
+using JPD.Demo.Service.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JPD.Demo.Service.Entities
+namespace JPD.Demo.Service.Data
 {
     public class UserContext : DbContext
     {
