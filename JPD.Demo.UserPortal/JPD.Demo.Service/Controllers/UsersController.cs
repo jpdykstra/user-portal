@@ -1,4 +1,5 @@
-﻿using JPD.Demo.Service.Data;
+﻿using JPD.Demo.Service.Business;
+using JPD.Demo.Service.Data;
 using JPD.Demo.Service.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -20,14 +21,14 @@ namespace JPD.Demo.Service.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
             //string[] names;
             //names = "Evan Garcia".Split();
 
             //var users = userData.SearchByNames(names);
 
-            var users = userData.SearchByFirstName("John");
+            var users = userLogic.SearchByFirstName("John");
 
             return Ok(users);
         }
@@ -41,9 +42,9 @@ namespace JPD.Demo.Service.Controllers
                 return BadRequest();
             }
 
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
-            userData.AddUser(user);
+            userLogic.AddUser(user);
 
             return Created("A new user was created", user);
         }

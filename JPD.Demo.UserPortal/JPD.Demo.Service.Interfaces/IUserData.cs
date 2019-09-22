@@ -12,7 +12,7 @@ namespace JPD.Demo.Service.Interfaces
 
         List<User> SearchByFirstName(string firstName);
 
-        List<User> SearchByLastName(string LastName);
+        List<User> SearchByLastName(string lastName);
 
         void AddUser(User user);
     }
