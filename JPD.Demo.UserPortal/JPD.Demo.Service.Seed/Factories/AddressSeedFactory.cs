@@ -2,7 +2,7 @@
 using JPD.Demo.Service.Interfaces;
 using System;
 
-namespace JPD.Demo.Service.Business.Factories
+namespace JPD.Demo.Service.Seed.Factories
 {
     public static class AddressSeedFactory
     {

@@ -1,7 +1,7 @@
 ﻿using JPD.Demo.Service.Common.Enums;
 using System.Collections.Generic;
 
-namespace JPD.Demo.Service.Business
+namespace JPD.Demo.Service.Seed
 {
     public class MailingAddressSeedLogic : AddressSeedLogicBase
     {

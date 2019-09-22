@@ -1,8 +1,8 @@
-﻿using JPD.Demo.Service.Business;
-using JPD.Demo.Service.Business.Factories;
-using JPD.Demo.Service.Common.Enums;
+﻿using JPD.Demo.Service.Common.Enums;
 using JPD.Demo.Service.Common.Helpers;
 using JPD.Demo.Service.Entities;
+using JPD.Demo.Service.Seed;
+using JPD.Demo.Service.Seed.Factories;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JPD.Demo.Service.Common\JPD.Demo.Service.Common.csproj" />
+    <ProjectReference Include="..\JPD.Demo.Service.Entities\JPD.Demo.Service.Entities.csproj" />
     <ProjectReference Include="..\JPD.Demo.Service.Interfaces\JPD.Demo.Service.Interfaces.csproj" />
   </ItemGroup>
 

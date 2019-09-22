@@ -1,5 +1,5 @@
-﻿using JPD.Demo.Service.Business;
-using JPD.Demo.Service.Entities;
+﻿using JPD.Demo.Service.Entities;
+using JPD.Demo.Service.Seed;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

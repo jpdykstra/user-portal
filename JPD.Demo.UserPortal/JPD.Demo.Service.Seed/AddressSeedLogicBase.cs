@@ -5,7 +5,7 @@ using JPD.Demo.Service.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace JPD.Demo.Service.Business
+namespace JPD.Demo.Service.Seed
 {
     public abstract class AddressSeedLogicBase : IAddressSeed
     {
