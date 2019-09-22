@@ -8,12 +8,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.2.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\JPD.Demo.Service.Common\JPD.Demo.Service.Common.csproj" />
+    <ProjectReference Include="..\JPD.Demo.Service.Data\JPD.Demo.Service.Data.csproj" />
     <ProjectReference Include="..\JPD.Demo.Service.Entities\JPD.Demo.Service.Entities.csproj" />
     <ProjectReference Include="..\JPD.Demo.Service.Interfaces\JPD.Demo.Service.Interfaces.csproj" />
     <ProjectReference Include="..\JPD.Demo.Service.Seed\JPD.Demo.Service.Seed.csproj" />

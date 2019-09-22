@@ -22,10 +22,12 @@ namespace JPD.Demo.Service.Controllers
         {
             var userData = new UserData(_context);
 
-            string[] names;
-            names = "Evan Garcia".Split();
+            //string[] names;
+            //names = "Evan Garcia".Split();
 
-            var users = userData.SearchByNames(names);
+            //var users = userData.SearchByNames(names);
+
+            var users = userData.SearchByFirstName("John");
 
             return Ok(users);
         }
