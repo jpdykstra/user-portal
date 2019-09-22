@@ -22,9 +22,7 @@ namespace JPD.Demo.Service
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //services.AddDbContext<UserContext>(c => c.UseSqlServer(Configuration["ConnectionString:UserPortalDB"]));
-
-            services.AddDbContext<UserContext>();
+            services.AddDbContext<UserContext>(c => c.UseSqlite(Configuration["ConnectionString:UserPortalDB"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

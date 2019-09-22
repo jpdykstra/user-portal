@@ -6,7 +6,7 @@ namespace JPD.Demo.Service.Data
 {
     public static class DatabaseManager
     {
-        public static IWebHost CreateDatabase(this IWebHost webHost)
+        public static IWebHost CreateDatabase(this IWebHost webHost, bool deleteIfExists)
         {
             using (var scope = webHost.Services.CreateScope())
             {
@@ -14,13 +14,18 @@ namespace JPD.Demo.Service.Data
                 {
                     try
                     {
-                        userContext.Database.EnsureCreated();
+                        if (deleteIfExists)
+                        {
+                            userContext.Database.EnsureDeleted();
+                        }
                     }
                     catch (Exception)
                     {
-                        // TODO: Log the error
-                        throw;
+                        // Might not have appropriate permissions. Just use the existing database.
+                        // TODO: Log the error. 
                     }
+
+                    userContext.Database.EnsureCreated();
                 }
             }
             return webHost;

@@ -4,8 +4,6 @@ using JPD.Demo.Service.Common.Enums;
 using JPD.Demo.Service.Common.Helpers;
 using JPD.Demo.Service.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,20 +13,11 @@ namespace JPD.Demo.Service.Data
     {
         public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
-            //Database.Migrate();
-            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.EnableSensitiveDataLogging(true);
-
-            optionsBuilder.UseSqlite(@"Data Source=userportal.db");
-
-            //optionsBuilder.UseInMemoryDatabase(Guid.NewGuid().ToString()).ConfigureWarnings(w =>
-            //{
-            //    w.Ignore(InMemoryEventId.TransactionIgnoredWarning);
-            //});
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

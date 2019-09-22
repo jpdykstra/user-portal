@@ -6,10 +6,14 @@ namespace JPD.Demo.Service.Interfaces
 {
     public interface IUserData
     {
-        List<User> GetByFirstName(string firstName);
+        List<User> SearchByNames(string[] names);
 
-        List<User> GetByLastName(string LastName);
+        List<User> SearchByFirstOrLastName(string name);
 
-        Guid AddUser(User user);
+        List<User> SearchByFirstName(string firstName);
+
+        List<User> SearchByLastName(string LastName);
+
+        void AddUser(User user);
     }
 }

@@ -9,7 +9,7 @@ namespace JPD.Demo.Service
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build()
-                .CreateDatabase()
+                .CreateDatabase(deleteIfExists:true)
                 .Run();
         }
 
