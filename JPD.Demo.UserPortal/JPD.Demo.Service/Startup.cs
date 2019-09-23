@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace JPD.Demo.Service
 {
@@ -28,10 +30,21 @@ namespace JPD.Demo.Service
 
             services.AddSwaggerGen(s =>
             {
-                s.SwaggerDoc("V1", new Info { Title = "User Service",
-                                              Version = "V1",
-                                              Description = "This service provides functionality to search and add users.",
-                                              Contact = new Contact { Name = "Jeff Dykstra", Email = "jeffery.dykstra@gmail.com" } });
+                //s.SwaggerDoc("V1", new Info { Title = "User Service",
+                //                              Version = "V1",
+                //                              Description = "This service provides functionality to search and add users.",
+                //                              Contact = new Contact { Name = "Jeff Dykstra", Email = "jeffery.dykstra@gmail.com" } });
+
+                s.SwaggerDoc("usersapi", new Info
+                {
+                    Title = "Users API",
+                    Version = "v1"
+                });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.XML";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+                s.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -48,14 +61,15 @@ namespace JPD.Demo.Service
                 app.UseHsts();
             }
 
-            app.UseSwagger();
             app.UseHttpsRedirection();
             app.UseMvc();
 
+            app.UseSwagger();
+
             app.UseSwaggerUI(s =>
             {
-                s.SwaggerEndpoint("/swagger/v1/swagger.json", "User Service - Version 1.0");
-                s.RoutePrefix = "";
+                s.SwaggerEndpoint("/swagger/usersapi/swagger.json", "Users API");
+                //s.RoutePrefix = "";
             });
         }
     }

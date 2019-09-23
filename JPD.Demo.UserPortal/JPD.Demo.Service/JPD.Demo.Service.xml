@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JPD.Demo.Service</name>
+    </assembly>
+    <members>
+        <member name="M:JPD.Demo.Service.Controllers.UsersController.GetByFirstOrLastName(System.String)">
+            <summary>
+            Searches for users whose first or last name match the name provided.
+            </summary>
+            <param name="name">Either the first or last name of a user</param>
+            <returns>Returns an OKObjectResult with a list of users whose first or last name matches the input (including name, addresses, age, and interests).</returns>
+        </member>
+        <member name="M:JPD.Demo.Service.Controllers.UsersController.AddUser(JPD.Demo.Service.Entities.User)">
+            <summary>
+            Adds a new user.
+            </summary>
+            <param name="user">User including name, age, addresses and interests.</param>
+            <returns>Returns a CreatedResult for the new user.</returns>
+        </member>
+    </members>
+</doc>

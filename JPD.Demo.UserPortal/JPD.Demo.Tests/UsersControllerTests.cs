@@ -56,7 +56,7 @@ namespace JPD.Demo.Tests
                 Description = "Are you telling me you built a time machine out of a DeLorean?"
             });
 
-            var response = _controller.Post(user);
+            var response = _controller.AddUser(user);
 
             Assert.IsInstanceOfType(response, typeof(CreatedResult));
         }
@@ -75,7 +75,7 @@ namespace JPD.Demo.Tests
 
             _controller.ModelState.AddModelError("FirstName", "Required");
 
-            var response = _controller.Post(user);
+            var response = _controller.AddUser(user);
 
             Assert.IsInstanceOfType(response, typeof(BadRequestResult));
         }
