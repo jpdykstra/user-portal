@@ -12,7 +12,6 @@ namespace JPD.Demo.Tests
     [TestClass]
     public class UserLogicTests : BaseDataTests
     {
-
         [TestMethod]
         public void UserLogic_Should_AddUser_ClarkGriswold()
         {

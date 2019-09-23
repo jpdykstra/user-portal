@@ -12,19 +12,19 @@ namespace JPD.Demo.Tests
     public class AddressSeedTests
     {
         [TestMethod]
-        public void SeedLogic_Should_CreateMailingAddress_Class()
+        public void SeedLogic_Should_ReturnMailingAddress_Class()
         {
             IAddressSeed addressLogic = AddressSeedFactory.Create(AddressType.Mailing);
 
-            Assert.IsTrue(addressLogic.GetType().Equals(typeof(MailingAddressSeedLogic)));
+            Assert.IsInstanceOfType(addressLogic, typeof(MailingAddressSeedLogic));
         }
 
         [TestMethod]
-        public void SeedLogic_Should_CreateBillingAddress_Class()
+        public void SeedLogic_Should_ReturnBillingAddress_Class()
         {
             IAddressSeed addressLogic = AddressSeedFactory.Create(AddressType.Billing);
 
-            Assert.IsTrue(addressLogic.GetType().Equals(typeof(BillingAddressSeedLogic)));
+            Assert.IsInstanceOfType(addressLogic, typeof(BillingAddressSeedLogic));
         }
 
         [TestMethod]

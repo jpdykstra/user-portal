@@ -17,18 +17,18 @@ namespace JPD.Demo.Service.Controllers
             _context = context;
         }
 
-        // GET api/users
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        // GET api/users/john
+        [HttpGet("{name}")]
+        public ActionResult<IEnumerable<User>> GetByFirstOrLastName(string name)
         {
             var userLogic = new UserLogic(new UserData(_context));
 
-            //string[] names;
-            //names = "Evan Garcia".Split();
+            var users = userLogic.SearchByFirstOrLastName(name);
 
-            //var users = userData.SearchByNames(names);
-
-            var users = userLogic.SearchByFirstName("John");
+            if (users == null || users.Count.Equals(0))
+            {
+                return NotFound();
+            }
 
             return Ok(users);
         }
