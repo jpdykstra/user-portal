@@ -1,4 +1,5 @@
 ﻿using JPD.Demo.Service.Data;
+using JPD.Demo.Service.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,19 +27,21 @@ namespace JPD.Demo.Service
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(LatencyFilter));
+            });
+                
             services.AddDbContext<UserContext>(c => c.UseSqlite(Configuration["ConnectionString:UserPortalDB"]));
 
             services.AddSwaggerGen(s =>
             {
-                //s.SwaggerDoc("V1", new Info { Title = "User Service",
-                //                              Version = "V1",
-                //                              Description = "This service provides functionality to search and add users.",
-                //                              Contact = new Contact { Name = "Jeff Dykstra", Email = "jeffery.dykstra@gmail.com" } });
-
                 s.SwaggerDoc("usersapi", new Info
                 {
                     Title = "Users API",
-                    Version = "v1"
+                    Version = "v1",
+                    Description = "This service provides functionality to search and add users.",
+                    Contact = new Contact { Name = "Jeff Dykstra", Email = "jeffery.dykstra@gmail.com" }
                 });
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.XML";
@@ -69,7 +72,6 @@ namespace JPD.Demo.Service
             app.UseSwaggerUI(s =>
             {
                 s.SwaggerEndpoint("/swagger/usersapi/swagger.json", "Users API");
-                //s.RoutePrefix = "";
             });
         }
     }
