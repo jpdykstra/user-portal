@@ -6,7 +6,7 @@ namespace JPD.Demo.Service.Interfaces
 {
     public interface IUserData
     {
-        List<User> SearchByNames(string[] names);
+        List<User> SearchByFirstAndLastName(string firstName, string lastName);
 
         List<User> SearchByFirstOrLastName(string name);
 

@@ -72,7 +72,8 @@ namespace JPD.Demo.Service.Seed
                 "Sara",
                 "Charles",
                 "Catalina",
-                "Evan"
+                "Evan",
+                "Lee"
             };
 
             return firstNames;

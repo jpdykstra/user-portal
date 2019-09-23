@@ -18,6 +18,11 @@ namespace JPD.Demo.Service.Business
             _userData.AddUser(user);
         }
 
+        public List<User> SearchByFirstAndLastName(string firstName, string lastName)
+        {
+            return _userData.SearchByFirstAndLastName(firstName, lastName);
+        }
+
         public List<User> SearchByFirstName(string firstName)
         {
            return _userData.SearchByFirstName(firstName);
@@ -31,11 +36,6 @@ namespace JPD.Demo.Service.Business
         public List<User> SearchByLastName(string lastName)
         {
             return _userData.SearchByLastName(lastName);
-        }
-
-        public List<User> SearchByNames(string[] names)
-        {
-            return _userData.SearchByNames(names);
         }
     }
 }

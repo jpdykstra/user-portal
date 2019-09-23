@@ -16,21 +16,18 @@ namespace JPD.Demo.Service.Data
             _context = context;
         }
 
-        public List<User> SearchByNames(string[] names)
+        public List<User> SearchByFirstAndLastName(string firstName, string lastName)
         {
             var users = new List<User>();
 
-            if (names.Length.Equals(2))
-            {
-                var result = _context.Users
-                    .AsNoTracking()
-                    .Include(a => a.Addresses)
-                    .Include(i => i.Interests)
-                    .Where(u => u.FirstName.ToLowerInvariant().Equals(names[0].Trim().ToLowerInvariant()) &&
-                    u.LastName.ToLowerInvariant().Equals(names[1].Trim().ToLowerInvariant()));
+            var result = _context.Users
+                .AsNoTracking()
+                .Include(a => a.Addresses)
+                .Include(i => i.Interests)
+                .Where(u => u.FirstName.ToLowerInvariant().Equals(firstName.Trim().ToLowerInvariant()) &&
+                u.LastName.ToLowerInvariant().Equals(lastName.Trim().ToLowerInvariant()));
 
-                users = result.ToList();
-            }
+            users = result.ToList();
 
             return users;
         }
