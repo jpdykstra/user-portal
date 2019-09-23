@@ -1,5 +1,7 @@
-﻿using JPD.Demo.Service.Data;
+﻿using JPD.Demo.Service.Common.Enums;
+using JPD.Demo.Service.Data;
 using JPD.Demo.Service.Entities;
+using JPD.Demo.Service.Seed;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,49 @@ namespace JPD.Demo.Tests
     [TestClass]
     public class UserDataTests : BaseDataTests
     {
+        [TestMethod]
         public void AddUser()
         {
-            throw new NotImplementedException();
+            var userData = new UserData(_context);
+
+            var user = new User()
+            {
+                FirstName = "Abe",
+                LastName = "Froman",
+                Age = 17,
+                Addresses = new List<Address>(),
+                Interests = new List<Interest>()
+            };
+
+            user.Addresses.Add(new Address()
+            {
+                AddressType = AddressType.Mailing,
+                AddressLine1 = "1060 W Addison St.",
+                AddressLine2 = "",
+                City = "Chicago",
+                State = "IL",
+                ZipCode = "60613"
+            });
+
+            user.Addresses.Add(new Address()
+            {
+                AddressType = AddressType.Billing,
+                AddressLine1 = "233 S Wacker Drive",
+                AddressLine2 = "",
+                City = "Chicago",
+                State = "IL",
+                ZipCode = "60606"
+            });
+
+            user.Interests.Add(new Interest()
+            {
+                Name = "Baseball",
+                Description = "Wanna have a catch?"
+            });
+
+            userData.AddUser(user);
+
+            Assert.IsTrue(user.UserId != Guid.Empty);
         }
 
         [TestMethod]
