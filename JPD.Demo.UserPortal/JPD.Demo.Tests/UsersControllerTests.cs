@@ -11,11 +11,16 @@ namespace JPD.Demo.Tests
     [TestClass]
     public class UsersControllerTests : BaseDataTests
     {
+        private readonly UsersController _controller;
+
+        public UsersControllerTests()
+        {
+            _controller = new UsersController(_context);
+        }
+
         [TestMethod]
         public void UsersController_Should_AddUser_MartyMcFly()
         {
-            var controller = new UsersController(_context);
-
             var user = new User()
             {
                 FirstName = "Marty",
@@ -51,7 +56,7 @@ namespace JPD.Demo.Tests
                 Description = "Are you telling me you built a time machine out of a DeLorean?"
             });
 
-            var response = controller.Post(user);
+            var response = _controller.Post(user);
 
             Assert.IsInstanceOfType(response, typeof(CreatedResult));
         }
@@ -59,8 +64,6 @@ namespace JPD.Demo.Tests
         [TestMethod]
         public void UsersController_Should_ReturnBadRequest_Post()
         {
-            var controller = new UsersController(_context);
-
             var user = new User()
             {
                 FirstName = "",
@@ -70,9 +73,9 @@ namespace JPD.Demo.Tests
                 Interests = new List<Interest>()
             };
 
-            controller.ModelState.AddModelError("FirstName", "Required");
+            _controller.ModelState.AddModelError("FirstName", "Required");
 
-            var response = controller.Post(user);
+            var response = _controller.Post(user);
 
             Assert.IsInstanceOfType(response, typeof(BadRequestResult));
         }
@@ -80,9 +83,7 @@ namespace JPD.Demo.Tests
         [TestMethod]
         public void UsersController_Should_GetByFirstOrLastName_WithJohn()
         {
-            var controller = new UsersController(_context);
-
-            var okResult = controller.GetByFirstOrLastName("john").Result as OkObjectResult;
+            var okResult = _controller.GetByFirstOrLastName("john").Result as OkObjectResult;
 
             Assert.IsInstanceOfType(okResult.Value, typeof(IList<User>));
 
@@ -92,9 +93,7 @@ namespace JPD.Demo.Tests
         [TestMethod]
         public void UsersController_Should_ReturnOkResult_GetByFirstOrLastName()
         {
-            var controller = new UsersController(_context);
-
-            var result = controller.GetByFirstOrLastName("john");
+            var result = _controller.GetByFirstOrLastName("john");
 
             Assert.IsInstanceOfType(result.Result, typeof(OkObjectResult));
         }
@@ -102,9 +101,7 @@ namespace JPD.Demo.Tests
         [TestMethod]
         public void UsersController_Should_ReturnNotFoundResult_GetByFirstOrLastName()
         {
-            var controller = new UsersController(_context);
-
-            var result = controller.GetByFirstOrLastName("name_not_found");
+            var result = _controller.GetByFirstOrLastName("name_not_found");
 
             Assert.IsInstanceOfType(result.Result, typeof(NotFoundResult));
         }
