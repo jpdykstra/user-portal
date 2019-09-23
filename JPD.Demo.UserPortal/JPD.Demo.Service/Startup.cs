@@ -1,5 +1,4 @@
 ﻿using JPD.Demo.Service.Data;
-using JPD.Demo.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

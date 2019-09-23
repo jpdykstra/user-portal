@@ -18,7 +18,7 @@ namespace JPD.Demo.Service.Controllers
         }
 
         // GET api/users/john
-        [HttpGet("{name}")]
+        [HttpGet("search/{name}")]
         public ActionResult<IEnumerable<User>> GetByFirstOrLastName(string name)
         {
             var userLogic = new UserLogic(new UserData(_context));

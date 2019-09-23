@@ -90,11 +90,11 @@ namespace JPD.Demo.Service.Seed
             var name = new List<string>()
             {
                 "{0} is my favorite thing to do.",
-                "I not a big fan of {0}.",
+                "I am not a big fan of {0}.",
                 "I wish I could do more {0}.",
                 "I wish I was better at {0}.",
                 "{0} is the best.",
-                "{0}, nuff said.",
+                "Let me tell you a story about {0}.",
                 "I enjoy {0}.",
             };
 
