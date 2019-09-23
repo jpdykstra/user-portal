@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPD.Demo.Service.Data", "JP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPD.Demo.Service.Business", "JPD.Demo.Service.Business\JPD.Demo.Service.Business.csproj", "{EAA913C8-34EF-4492-9945-356CDE3FC5ED}"
 EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "JPD.Demo.PowerShell.Scripts", "JPD.Demo.PowerShell.Scripts\JPD.Demo.PowerShell.Scripts.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{EAA913C8-34EF-4492-9945-356CDE3FC5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAA913C8-34EF-4492-9945-356CDE3FC5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAA913C8-34EF-4492-9945-356CDE3FC5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
