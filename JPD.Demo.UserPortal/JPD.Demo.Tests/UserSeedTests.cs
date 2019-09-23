@@ -11,7 +11,7 @@ namespace JPD.Demo.Tests
     public class UserSeedTests
     {
         [TestMethod]
-        public void Should_PopulateUser()
+        public void SeedLogic_Should_PopulateUser()
         {
             var user = new User();
 
@@ -27,7 +27,7 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void Should_PopulateUserList()
+        public void SeedLogic_Should_PopulateUserList()
         {
             int count = 5;
             var users = new List<User>();

@@ -12,7 +12,7 @@ namespace JPD.Demo.Tests
     public class InterestSeedTests
     {
         [TestMethod]
-        public void Should_PopulateInterest()
+        public void SeedLogic_Should_PopulateInterest()
         {
             var interest = new Interest();
 
@@ -26,7 +26,7 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void Should_PopulateUserList()
+        public void SeedLogic_Should_PopulateUserList()
         {
             int count = 3;
             var interests = new List<Interest>();

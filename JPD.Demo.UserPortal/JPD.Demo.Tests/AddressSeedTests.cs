@@ -12,7 +12,7 @@ namespace JPD.Demo.Tests
     public class AddressSeedTests
     {
         [TestMethod]
-        public void Should_CreateMailingAddressSeedLogic()
+        public void SeedLogic_Should_CreateMailingAddress_Class()
         {
             IAddressSeed addressLogic = AddressSeedFactory.Create(AddressType.Mailing);
 
@@ -20,7 +20,7 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void Should_CreateBillingAddressSeedLogic()
+        public void SeedLogic_Should_CreateBillingAddress_Class()
         {
             IAddressSeed addressLogic = AddressSeedFactory.Create(AddressType.Billing);
 
@@ -28,7 +28,7 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void Should_PopulateMailingAddress()
+        public void SeedLogic_Should_PopulateMailingAddress()
         {
             var address = new Address();
             var addressSeedLogic = new MailingAddressSeedLogic();
@@ -49,7 +49,7 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void Should_PopulateBillingAddress()
+        public void SeedLogic_Should_PopulateBillingAddress()
         {
             var address = new Address();
             var addressSeedLogic = new BillingAddressSeedLogic();

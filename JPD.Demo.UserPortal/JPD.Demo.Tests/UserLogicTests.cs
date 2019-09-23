@@ -1,4 +1,5 @@
-﻿using JPD.Demo.Service.Common.Enums;
+﻿using JPD.Demo.Service.Business;
+using JPD.Demo.Service.Common.Enums;
 using JPD.Demo.Service.Data;
 using JPD.Demo.Service.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,18 +10,19 @@ using System.Linq;
 namespace JPD.Demo.Tests
 {
     [TestClass]
-    public class UserDataTests : BaseDataTests
+    public class UserLogicTests : BaseDataTests
     {
+
         [TestMethod]
-        public void UserData_Should_AddUser_AbeFroman()
+        public void UserLogic_Should_AddUser_ClarkGriswold()
         {
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
             var user = new User()
             {
-                FirstName = "Abe",
-                LastName = "Froman",
-                Age = 17,
+                FirstName = "Clark",
+                LastName = "Griswold",
+                Age = 42,
                 Addresses = new List<Address>(),
                 Interests = new List<Interest>()
             };
@@ -47,21 +49,21 @@ namespace JPD.Demo.Tests
 
             user.Interests.Add(new Interest()
             {
-                Name = "Baseball",
-                Description = "Wanna have a catch?"
+                Name = "Hanging Christmas Lights",
+                Description = "I dedicate this house to the Griswold Family Christmas."
             });
 
-            userData.AddUser(user);
+            userLogic.AddUser(user);
 
             Assert.IsTrue(user.UserId != Guid.Empty);
         }
 
         [TestMethod]
-        public void UserData_Should_SearchByFirstName_WithJohn()
+        public void UserLogic_Should_SearchByFirstName_WithJohn()
         {
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
-            List<User> users = userData.SearchByFirstName("John");
+            List<User> users = userLogic.SearchByFirstName("John");
 
             Assert.IsNotNull(users);
 
@@ -69,11 +71,11 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void UserData_Should_SearchByLastName_WithDiaz()
+        public void UserLogic_Should_SearchByLastName_WithDiaz()
         {
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
-            List<User> users = userData.SearchByLastName("Diaz");
+            List<User> users = userLogic.SearchByLastName("Diaz");
 
             Assert.IsNotNull(users);
 
@@ -81,11 +83,11 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void UserData_Should_SearchByFirstOrLastName_WithLee()
+        public void UserLogic_Should_SearchByFirstOrLastName_WithLee()
         {
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
-            List<User> users = userData.SearchByFirstOrLastName("Lee");
+            List<User> users = userLogic.SearchByFirstOrLastName("Lee");
 
             Assert.IsNotNull(users);
 
@@ -94,11 +96,11 @@ namespace JPD.Demo.Tests
         }
 
         [TestMethod]
-        public void UserData_Should_SearchByFirstAndLastName_WithJohnSmith()
+        public void UserLogic_Should_SearchByFirstAndLastName_WithJohnSmith()
         {
-            var userData = new UserData(_context);
+            var userLogic = new UserLogic(new UserData(_context));
 
-            List<User> users = userData.SearchByFirstAndLastName("John", "Smith");
+            List<User> users = userLogic.SearchByFirstAndLastName("John", "Smith");
 
             Assert.IsNotNull(users);
         }
