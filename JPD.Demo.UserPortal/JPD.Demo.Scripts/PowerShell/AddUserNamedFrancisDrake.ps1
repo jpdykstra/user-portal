@@ -1,6 +1,7 @@
 #
-# AddUserNamedFrancisDrake.ps1
+# This script will add a new user.
 #
+# NOTE: The JPD.Demo.Service project needs to be running in order for this script to connect to the server.
 
 $addresses = @()
 $addresses += [pscustomobject]@{
